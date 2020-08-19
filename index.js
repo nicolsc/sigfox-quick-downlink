@@ -15,7 +15,7 @@ app.get("/:device/:data", (req, res)=>{
     return res.status(400).send();
   }
   var response = {};
-  response[req.params.device] = req.params.data;
+  response[req.params.device] = {"downlinkData":req.params.data};
   res.status(200).json(response)
 });
 app.get("*", (req, res) => {
